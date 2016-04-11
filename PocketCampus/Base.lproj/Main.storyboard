@@ -26,15 +26,18 @@
             </objects>
             <point key="canvasLocation" x="137.5" y="1315.5"/>
         </scene>
-        <!--Item-->
+        <!--公告栏-->
         <scene sceneID="DCz-RP-HRN">
             <objects>
                 <navigationController id="e6t-eC-KgD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="I25-rd-tly"/>
+                    <tabBarItem key="tabBarItem" title="公告栏" image="msg" id="I25-rd-tly"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="x6k-0n-Huc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.7343804317" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="eeW-ty-BeB" kind="relationship" relationship="rootViewController" id="gIr-g5-CmS"/>
@@ -44,107 +47,60 @@
             </objects>
             <point key="canvasLocation" x="970.5" y="1069.5"/>
         </scene>
-        <!--Root View Controller-->
-        <scene sceneID="NFc-rI-Fyf">
-            <objects>
-                <tableViewController id="qP6-jb-mg7" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="wrR-jm-Bz6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Svf-eU-O6Z">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Svf-eU-O6Z" id="saD-7D-vPk">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="qP6-jb-mg7" id="m48-29-Ows"/>
-                            <outlet property="delegate" destination="qP6-jb-mg7" id="zdG-XR-Tfz"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="kOr-dQ-XRM"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ba8-3F-WMo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1589.5" y="1796.5"/>
-        </scene>
-        <!--Item-->
+        <!--万事屋-->
         <scene sceneID="dQh-EG-CKB">
             <objects>
                 <navigationController id="maQ-vr-3Ko" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ZG8-mH-N9h"/>
+                    <tabBarItem key="tabBarItem" title="万事屋" image="msg" id="ZG8-mH-N9h"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dfc-Tm-oxL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.7343804317" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="qP6-jb-mg7" kind="relationship" relationship="rootViewController" id="ELX-FU-2BM"/>
+                        <segue destination="6cH-4u-FtH" kind="relationship" relationship="rootViewController" id="CbM-If-f70"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qGa-hv-Bni" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="874" y="1809"/>
         </scene>
-        <!--Root View Controller-->
-        <scene sceneID="0KC-yG-Osg">
-            <objects>
-                <tableViewController id="dmz-vT-ukY" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="L3T-bj-7cE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="RxA-9f-a8b">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RxA-9f-a8b" id="CRJ-4G-g80">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="dmz-vT-ukY" id="m8C-Hb-Vtc"/>
-                            <outlet property="delegate" destination="dmz-vT-ukY" id="hCK-MQ-GHv"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="IBt-VQ-fLm"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ByZ-t6-uYP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1684" y="2627"/>
-        </scene>
-        <!--Item-->
+        <!--个人-->
         <scene sceneID="zoS-52-i5O">
             <objects>
                 <navigationController id="28j-4W-re8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="hG9-z3-e8D"/>
+                    <tabBarItem key="tabBarItem" title="个人" image="人" id="hG9-z3-e8D"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tq1-J1-RGp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.7343804317" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="dmz-vT-ukY" kind="relationship" relationship="rootViewController" id="s9M-FH-rMA"/>
+                        <segue destination="0zl-TZ-NOi" kind="relationship" relationship="rootViewController" id="s9M-FH-rMA"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s6V-q7-qLC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="864" y="2627"/>
         </scene>
-        <!--Item-->
+        <!--操场-->
         <scene sceneID="5xv-C7-w98">
             <objects>
                 <navigationController id="Jl8-uO-Svh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="xh5-K0-4zh"/>
+                    <tabBarItem key="tabBarItem" title="操场" image="项目目标" id="xh5-K0-4zh"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="gEh-qc-44y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.7343804317" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="QfD-cP-YHP" kind="relationship" relationship="rootViewController" id="Y3p-jt-G7J"/>
@@ -174,5 +130,39 @@
             </objects>
             <point key="canvasLocation" x="1589.5" y="1052.5"/>
         </scene>
+        <!--万事屋-->
+        <scene sceneID="kck-hi-GEY">
+            <objects>
+                <viewController id="6cH-4u-FtH" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CCC-1U-DSd"/>
+                        <viewControllerLayoutGuide type="bottom" id="r4n-uC-CZJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ofs-9O-1fI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="万事屋" id="wkP-40-TWN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yOa-uG-xXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1462.5" y="1813.5"/>
+        </scene>
+        <!--Personal-->
+        <scene sceneID="XaJ-IY-KZZ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Personal" id="0zl-TZ-NOi" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="P9g-w7-hA1"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yxq-rT-wai" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1683.5" y="2626.5"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="msg" width="30" height="24"/>
+        <image name="人" width="30" height="27"/>
+        <image name="项目目标" width="25" height="25"/>
+    </resources>
 </document>
