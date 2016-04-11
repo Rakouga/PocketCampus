@@ -5,6 +5,25 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="Zg5-tu-rbh">
+            <objects>
+                <viewController id="kze-jt-h8T" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6jn-hb-u55"/>
+                        <viewControllerLayoutGuide type="bottom" id="YH0-4A-5PM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="28P-16-FfG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XMd-0S-xf9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-426.5" y="1325.5"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="z0h-Mb-mmf">
             <objects>
