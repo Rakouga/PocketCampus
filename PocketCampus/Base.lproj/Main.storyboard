@@ -8,7 +8,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="z0h-Mb-mmf">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sCY-Ah-v1V" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController id="Fak-Ij-CjH" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="V1H-jK-jxq">
@@ -23,6 +22,7 @@
                         <segue destination="28j-4W-re8" kind="relationship" relationship="viewControllers" id="l4P-GT-h3R"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sCY-Ah-v1V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.5" y="1315.5"/>
         </scene>
@@ -42,7 +42,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5h4-Ob-IPC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="912" y="1099"/>
+            <point key="canvasLocation" x="970.5" y="1069.5"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="NFc-rI-Fyf">

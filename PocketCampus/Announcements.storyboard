@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--公告栏-->
@@ -60,10 +61,376 @@
                     </simulatedNavigationBarMetrics>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="m2m-Tp-66T" kind="presentation" id="yZl-Vk-a0X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ja-BC-IhR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1589.5" y="1052.5"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="BwB-jN-rrC">
+            <objects>
+                <viewController id="m2m-Tp-66T" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BCg-id-5gk"/>
+                        <viewControllerLayoutGuide type="bottom" id="zno-Dn-Tys"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LTw-aB-zqD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="USv-qf-fNf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <color key="backgroundColor" red="0.0" green="0.7343804317" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Fhb-QE-1Z4"/>
+                                </constraints>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKp-Nr-low">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="JoJ-3K-pcE"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.0" green="0.7343804317" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="公告详情" id="Erp-h9-w1t">
+                                        <barButtonItem key="leftBarButtonItem" image="ic_back" id="4qa-jf-HhS">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pWQ-Wh-n41">
+                                <rect key="frame" x="0.0" y="164" width="375" height="503"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <mutableString key="text">//
+//  AllProjectViewController.swift
+//  NewWorker
+//
+//  Created by 罗浩伽 on 16/3/16.
+//  Copyright © 2016年 泉. All rights reserved.
+//
+
+import UIKit
+
+class AllProjectViewController: UIViewController , UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate{
+
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var doingLabel: UILabel!
+    @IBOutlet weak var doneLabel: UILabel!
+    @IBOutlet weak var doingTableView: UITableView!
+    @IBOutlet weak var doneTableView: UITableView!
+    @IBOutlet weak var slideView: UIView!
+    //这个constraint是slideView左边相对于view的限制
+    @IBOutlet weak var viewLeadingConstraints: NSLayoutConstraint!
+
+    
+    var doingList = [Dictionary&lt;String,String&gt;]()
+    var doneList = [Dictionary&lt;String,String&gt;]()
+    //定义一个偏移量
+    var offset: CGFloat = 0.0 {
+        //当offset的值改变后会执行的代码块
+        didSet {
+            UIView.animateWithDuration(0.3) { () -&gt; Void in
+                self.scrollView.contentOffset = CGPoint(x: self.offset, y: 0)
+                self.slideView.frame = CGRectMake(self.offset, 40, widthOfWindow / 2, 3)
+            }
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //去掉多余的线条
+        self.doingTableView.tableFooterView = UIView()
+        self.doneTableView.tableFooterView = UIView()
+        
+        //设置scroll的属性
+        self.scrollView.delegate = self
+        self.scrollView.pagingEnabled = true
+        
+        //设置数据源和监听事件
+        self.doingTableView?.dataSource = self
+        self.doneTableView?.dataSource = self
+        self.doingTableView?.delegate = self
+        self.doneTableView?.delegate = self
+        //给两个Label添加点击事件
+        self.doingLabel.userInteractionEnabled = true
+        self.doneLabel.userInteractionEnabled = true
+        self.doingLabel!.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(AllProjectViewController.toDoingLabel)))
+        self.doneLabel!.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(AllProjectViewController.toDoneLabel)))
+        
+        print("\(self.viewLeadingConstraints)")
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        //获取"进行中"和"已完成"的任务列表
+        getDoingProjectList()
+        getDoneProjectList()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    /**
+     获取"进行中"的任务列表数据
+     */
+    func getDoingProjectList(){
+        doingList.removeAll()
+        
+        request(Method.POST, url+"/getMsg/getItemListOn", parameters: ["jsessionid":jsessionid]).responseJSON(){
+            [weak self](_, _, result) in
+            guard let weakself = self else {
+                return
+            }
+            
+            switch result {
+            case .Success:
+                let json = JSON(result.value!)
+                
+                if json["result"].boolValue {
+                    let datas = json["tbody"].arrayValue
+                    
+                    for data in datas {
+                        var dic = Dictionary&lt;String, String&gt;()
+                        dic["itemid"]           = data["itemid"].stringValue
+                        dic["director"]         = data["director"].stringValue
+                        dic["itemName"]         = data["itemName"].stringValue
+                        dic["photoColor"]       = data["photoColor"].stringValue
+                        dic["startTime"]        = data["startTime"].stringValue
+                        weakself.doingList.append(dic)
+                    }
+                    weakself.doingTableView.reloadData()
+                } else {
+                    weakself.view.makeToast(json["info"].stringValue, duration: 2, position: CSToastPositionCenter)
+                }
+            case .Failure(_, _):
+                weakself.view.makeToast("未知错误", duration: 2, position: CSToastPositionCenter)
+            }
+        }
+
+    }
+    
+    /**
+    获取"已完成"的任务列表数据
+    */
+    func getDoneProjectList(){
+        doneList.removeAll()
+        
+        request(Method.POST, url+"/getMsg/getItemListOver", parameters: ["jsessionid":jsessionid]).responseJSON(){
+            [weak self](_, _, result) in
+            guard let weakself = self else {
+                return
+            }
+            
+            switch result {
+            case .Success:
+                let json = JSON(result.value!)
+                
+                if json["result"].boolValue {
+                    let datas = json["tbody"].arrayValue
+                    
+                    for data in datas {
+                        var dic = Dictionary&lt;String, String&gt;()
+                        dic["itemid"]           = data["itemid"].stringValue
+                        dic["director"]         = data["director"].stringValue
+                        dic["itemName"]         = data["itemName"].stringValue
+                        dic["photoColor"]       = data["photoColor"].stringValue
+                        dic["startTime"]        = data["startTime"].stringValue
+                        weakself.doneList.append(dic)
+                    }
+                    weakself.doneTableView.reloadData()
+                } else {
+                    weakself.view.makeToast(json["info"].stringValue, duration: 2, position: CSToastPositionCenter)
+                }
+            case .Failure(_, _):
+                weakself.view.makeToast("未知错误", duration: 2, position: CSToastPositionCenter)
+            }
+        }
+
+    }
+    
+    /**
+     当点击"进行中"label时,切换到相应的列表
+    */
+    func toDoingLabel(){
+        doingLabel.userInteractionEnabled = false
+        doneLabel.userInteractionEnabled = true
+        self.doingLabel.textColor = tintColor
+        self.doneLabel.textColor = UIColor(hexString: "696969")
+        
+        offset = 0
+    }
+    
+    /**
+     当点击已完成"的label时,切换到相应的列表
+     */
+    func toDoneLabel(){
+        doingLabel.userInteractionEnabled = true
+        doneLabel.userInteractionEnabled = false
+        self.doneLabel.textColor = tintColor
+        self.doingLabel.textColor = UIColor(hexString: "696969")
+        
+        offset = widthOfWindow
+    }
+    
+    /**
+     视图滚动时一直触发该事件
+    */
+    func scrollViewDidScroll(scrollView: UIScrollView){
+        viewLeadingConstraints.constant = self.scrollView.contentOffset.x / 2
+        if self.scrollView.contentOffset.x &lt;= widthOfWindow / 2 {
+            doingLabel.userInteractionEnabled = false
+            doneLabel.userInteractionEnabled = true
+            self.doingLabel.textColor = tintColor
+            self.doneLabel.textColor = UIColor(hexString: "696969")
+        } else  {
+            doingLabel.userInteractionEnabled = true
+            doneLabel.userInteractionEnabled = false
+            self.doneLabel.textColor = tintColor
+            self.doingLabel.textColor = UIColor(hexString: "696969")
+        }
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int {
+        if tableView == self.doingTableView {
+//            print("未完成数量:\(self.doingList.count)")
+            return self.doingList.count
+        } else {
+//            print("已完成数量:\(self.doneList.count)")
+            return self.doneList.count
+        }
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -&gt; UITableViewCell {
+        if tableView == self.doingTableView {
+            let data = self.doingList[indexPath.row]
+            let cell = tableView.dequeueReusableCellWithIdentifier("doingTableViewCell") as! DoingTableViewCell
+//            print("进行中:\(data)"
+            cell.projectName.text = data["itemName"]
+            cell.personInCharge.text = data["director"]
+            cell.date.text = data["startTime"]
+            cell.color.backgroundColor = UIColor(hexString: data["photoColor"])
+            cell.itemID = data["itemid"]
+            let pro = NSString(string: cell.projectName.text!)
+            if pro.length != 0{
+                cell.color.text = pro.substringWithRange(NSMakeRange(0, 1))
+            }
+            
+            return cell
+        } else {
+            let data = self.doneList[indexPath.row]
+//            print("已完成:\(data)")
+            let cell = tableView.dequeueReusableCellWithIdentifier("doneTableViewCell") as! DoneTableViewCell
+            
+            cell.projectName.text = data["itemName"]
+            cell.personInCharge.text = data["director"]
+            cell.date.text = data["startTime"]
+            cell.color.backgroundColor = UIColor(hexString: data["photoColor"])
+            cell.itemID = data["itemid"]
+            let pro = NSString(string: cell.projectName.text!)
+            if pro.length != 0{
+                cell.color.text = pro.substringWithRange(NSMakeRange(0, 1))
+            }
+            
+            return cell
+        }
+    }
+    
+    //点击项目后跳转到"项目详情"
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //当手指离开时,某行的选中状态消失(阴影消失)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        var id:String!
+        if tableView == self.doingTableView{
+            let cell = tableView.cellForRowAtIndexPath(indexPath) as! DoingTableViewCell
+            id = cell.itemID
+        }else{
+            let cell = tableView.cellForRowAtIndexPath(indexPath) as! DoneTableViewCell
+            id = cell.itemID
+        }
+        
+        //将项目id(id)作为参数,并跳转到ProjectDetailViewController
+        self.performSegueWithIdentifier("toProjectDetail", sender: id)
+        
+    }
+    
+    /**
+    在这个方法中给新页面传递参数
+    */
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "toProjectDetail" {
+            let controller = segue.destinationViewController as! ProjectDetailViewController
+            controller.itemID = sender as! String
+        }
+    }
+    
+}
+</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVb-ir-Y9G">
+                                <rect key="frame" x="10" y="174" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="公告标题" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGO-Ao-hJX">
+                                <rect key="frame" x="10" y="74" width="339" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="单位:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MID-Ci-Iyv">
+                                <rect key="frame" x="10" y="107" width="339" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="公告时间:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyg-QP-Dye">
+                                <rect key="frame" x="10" y="133" width="339" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="USv-qf-fNf" firstAttribute="leading" secondItem="LTw-aB-zqD" secondAttribute="leading" id="49b-y8-jjs"/>
+                            <constraint firstItem="hGO-Ao-hJX" firstAttribute="leading" secondItem="LTw-aB-zqD" secondAttribute="leading" constant="10" id="5FG-Qu-Fty"/>
+                            <constraint firstItem="hGO-Ao-hJX" firstAttribute="top" secondItem="kKp-Nr-low" secondAttribute="bottom" constant="10" id="8MS-eK-RS5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MID-Ci-Iyv" secondAttribute="trailing" constant="10" id="BX6-bZ-rAF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hyg-QP-Dye" secondAttribute="trailing" constant="10" id="Evp-w3-EhN"/>
+                            <constraint firstItem="hyg-QP-Dye" firstAttribute="top" secondItem="MID-Ci-Iyv" secondAttribute="bottom" constant="5" id="FcU-X0-4IX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hGO-Ao-hJX" secondAttribute="trailing" constant="10" id="FjQ-aL-Wu0"/>
+                            <constraint firstAttribute="trailing" secondItem="kKp-Nr-low" secondAttribute="trailing" id="GVt-5v-jvZ"/>
+                            <constraint firstItem="USv-qf-fNf" firstAttribute="top" secondItem="BCg-id-5gk" secondAttribute="bottom" constant="-20" id="VMx-20-JOr"/>
+                            <constraint firstItem="hyg-QP-Dye" firstAttribute="leading" secondItem="LTw-aB-zqD" secondAttribute="leading" constant="10" id="ZDR-A3-qVk"/>
+                            <constraint firstItem="zno-Dn-Tys" firstAttribute="top" secondItem="pWQ-Wh-n41" secondAttribute="bottom" id="bwb-34-0tS"/>
+                            <constraint firstItem="kKp-Nr-low" firstAttribute="leading" secondItem="LTw-aB-zqD" secondAttribute="leading" id="byc-7n-xcR"/>
+                            <constraint firstItem="MID-Ci-Iyv" firstAttribute="leading" secondItem="LTw-aB-zqD" secondAttribute="leading" constant="10" id="f2x-BP-9s5"/>
+                            <constraint firstItem="MID-Ci-Iyv" firstAttribute="top" secondItem="hGO-Ao-hJX" secondAttribute="bottom" constant="10" id="kxg-FD-PHs"/>
+                            <constraint firstItem="pWQ-Wh-n41" firstAttribute="top" secondItem="kKp-Nr-low" secondAttribute="bottom" constant="100" id="mOS-52-M5t"/>
+                            <constraint firstItem="pWQ-Wh-n41" firstAttribute="leading" secondItem="LTw-aB-zqD" secondAttribute="leading" id="nQR-QN-NUn"/>
+                            <constraint firstItem="kKp-Nr-low" firstAttribute="top" secondItem="BCg-id-5gk" secondAttribute="bottom" id="qqy-1l-jR9"/>
+                            <constraint firstAttribute="trailing" secondItem="pWQ-Wh-n41" secondAttribute="trailing" id="u6f-T8-mTL"/>
+                            <constraint firstAttribute="trailing" secondItem="USv-qf-fNf" secondAttribute="trailing" id="zpQ-W0-u9f"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3qc-xv-ycg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2211.5" y="1074.5"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="ic_back" width="24" height="24"/>
+    </resources>
 </document>
