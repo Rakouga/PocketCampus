@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qPt-Cw-HEU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qPt-Cw-HEU">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -91,7 +91,7 @@
                                     <constraint firstAttribute="height" constant="20" id="RqD-Zm-B2O"/>
                                 </constraints>
                             </view>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDm-wg-d7R">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDm-wg-d7R">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <color key="barTintColor" red="0.0" green="0.7343804317" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
@@ -105,12 +105,63 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrB-zK-7Wr">
+                                <rect key="frame" x="26" y="94" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NSh-yD-Dqj">
+                                <rect key="frame" x="70" y="90" width="279" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywm-5h-EhF">
+                                <rect key="frame" x="26" y="190" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="q2a-e4-s1Q">
+                                <rect key="frame" x="70" y="140" width="279" height="120"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="sQZ-s6-pXa"/>
+                                </constraints>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPU-y4-6uf">
+                                <rect key="frame" x="26" y="310" width="323" height="34"/>
+                                <color key="backgroundColor" red="0.0" green="0.7343804317" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="发帖">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="IDm-wg-d7R" firstAttribute="top" secondItem="qQQ-8g-Y3t" secondAttribute="bottom" id="1sB-TD-47f"/>
                             <constraint firstItem="KDG-IJ-PMH" firstAttribute="top" secondItem="qQQ-8g-Y3t" secondAttribute="bottom" constant="-20" id="7T2-rn-LnD"/>
+                            <constraint firstItem="IDm-wg-d7R" firstAttribute="leading" secondItem="l3J-TW-WHH" secondAttribute="leading" id="9bQ-vi-6g4"/>
                             <constraint firstAttribute="trailing" secondItem="KDG-IJ-PMH" secondAttribute="trailing" id="AFh-cW-9tw"/>
+                            <constraint firstItem="q2a-e4-s1Q" firstAttribute="centerX" secondItem="NSh-yD-Dqj" secondAttribute="centerX" id="Dsa-Lm-30D"/>
+                            <constraint firstItem="DPU-y4-6uf" firstAttribute="top" secondItem="q2a-e4-s1Q" secondAttribute="bottom" constant="50" id="KGB-y1-QiK"/>
+                            <constraint firstItem="NSh-yD-Dqj" firstAttribute="centerY" secondItem="YrB-zK-7Wr" secondAttribute="centerY" id="LXv-f4-90E"/>
+                            <constraint firstItem="DPU-y4-6uf" firstAttribute="leading" secondItem="l3J-TW-WHH" secondAttribute="leadingMargin" constant="10" id="MpS-vZ-OoA"/>
+                            <constraint firstItem="YrB-zK-7Wr" firstAttribute="leading" secondItem="l3J-TW-WHH" secondAttribute="leadingMargin" constant="10" id="YBm-kb-NIn"/>
+                            <constraint firstAttribute="trailing" secondItem="IDm-wg-d7R" secondAttribute="trailing" id="ZAW-aD-0Sz"/>
+                            <constraint firstItem="q2a-e4-s1Q" firstAttribute="leading" secondItem="ywm-5h-EhF" secondAttribute="trailing" constant="10" id="ZZp-GA-6yR"/>
+                            <constraint firstItem="NSh-yD-Dqj" firstAttribute="leading" secondItem="YrB-zK-7Wr" secondAttribute="trailing" constant="10" id="Zmk-Ov-GDf"/>
+                            <constraint firstItem="q2a-e4-s1Q" firstAttribute="top" secondItem="NSh-yD-Dqj" secondAttribute="bottom" constant="20" id="bla-SN-Pue"/>
                             <constraint firstItem="KDG-IJ-PMH" firstAttribute="leading" secondItem="l3J-TW-WHH" secondAttribute="leading" id="hl3-Xi-xyV"/>
+                            <constraint firstItem="ywm-5h-EhF" firstAttribute="centerY" secondItem="q2a-e4-s1Q" secondAttribute="centerY" id="pOq-3f-cvG"/>
+                            <constraint firstItem="YrB-zK-7Wr" firstAttribute="top" secondItem="IDm-wg-d7R" secondAttribute="bottom" constant="30" id="sAi-8J-BYj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NSh-yD-Dqj" secondAttribute="trailing" constant="10" id="sWN-zA-XAs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DPU-y4-6uf" secondAttribute="trailing" constant="10" id="tIh-1H-thS"/>
+                            <constraint firstItem="q2a-e4-s1Q" firstAttribute="width" secondItem="NSh-yD-Dqj" secondAttribute="width" id="uZm-gx-z4U"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -171,8 +222,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ty-nz-bWm">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="记得代码加边框,圆角" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="btQ-FJ-AOH">
-                                        <rect key="frame" x="40" y="10" width="287" height="33"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="记得代码加边框,圆角" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="btQ-FJ-AOH">
+                                        <rect key="frame" x="40" y="10" width="287" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="QLj-WP-lvx"/>

@@ -109,9 +109,9 @@
 				2C53FE6C1CBB388300033505 /* AppDelegate.swift */,
 				2C53FE6E1CBB388300033505 /* ViewController.swift */,
 				2C53FE701CBB388300033505 /* Main.storyboard */,
+				2C53FEA61CBB557F00033505 /* Playground.storyboard */,
 				2C53FEAB1CBBC64800033505 /* Personal.storyboard */,
 				2C53FEA91CBB55A400033505 /* Announcements.storyboard */,
-				2C53FEA61CBB557F00033505 /* Playground.storyboard */,
 				2C53FE731CBB388300033505 /* Assets.xcassets */,
 				2C53FE751CBB388300033505 /* LaunchScreen.storyboard */,
 				2C53FE781CBB388300033505 /* Info.plist */,
@@ -523,6 +523,7 @@
 				2C53FE931CBB388300033505 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2C53FE941CBB388300033505 /* Build configuration list for PBXNativeTarget "PocketCampusTests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +532,7 @@
 				2C53FE961CBB388300033505 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2C53FE971CBB388300033505 /* Build configuration list for PBXNativeTarget "PocketCampusUITests" */ = {
 			isa = XCConfigurationList;
@@ -539,6 +541,7 @@
 				2C53FE991CBB388300033505 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
