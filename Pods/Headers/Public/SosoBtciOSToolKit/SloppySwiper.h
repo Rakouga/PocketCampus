@@ -1,0 +1,1 @@
+../../../../../../../../Shared/SosoBtcFrameWorks/SosoBtciOSToolKit/SosoBtciOSToolKit/ViewController/SloppySwiper/SloppySwiper.h

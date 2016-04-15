@@ -1,0 +1,32 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D983E6672790B522BD21C3228606553BE8919635",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "3a3be3f2-9f08-4127-91e5-06ea1388c01e++5683" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D983E6672790B522BD21C3228606553BE8919635" : 0,
+    "3a3be3f2-9f08-4127-91e5-06ea1388c01e++5683" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7B5CB3C0-C909-44BF-A54C-77818E2B0F11",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D983E6672790B522BD21C3228606553BE8919635" : "PocketCampus\/",
+    "3a3be3f2-9f08-4127-91e5-06ea1388c01e++5683" : "..\/..\/..\/Shared\/SosoBtcFrameWorks\/SosoBtciOSToolKit"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "PocketCampus",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PocketCampus.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/luo.hj@115.29.44.61",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3a3be3f2-9f08-4127-91e5-06ea1388c01e++5683"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Rakouga\/PocketCampus.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D983E6672790B522BD21C3228606553BE8919635"
+    }
+  ]
+}

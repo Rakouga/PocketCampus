@@ -1,0 +1,1 @@
+../../../../../../../../Shared/SosoBtcFrameWorks/SosoBtciOSToolKit/SosoBtciOSToolKit/Networking/HttpOptimizedManager.h

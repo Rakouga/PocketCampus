@@ -1,0 +1,43 @@
+{
+  "name": "SosoBtciOSToolKit",
+  "version": "1.0.2",
+  "summary": "This is a private framework create by yinnieryou.",
+  "homepage": "http://www.sosobtc.com/",
+  "license": "MIT",
+  "authors": {
+    "yinnieryou": "yinnieryou@gmail.com"
+  },
+  "source": {
+    "git": "",
+    "tag": "1.0.2",
+    "submodules": true
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "requires_arc": true,
+  "source_files": [
+    "SosoBtciOSToolKit/*.h",
+    "SosoBtciOSToolKit/**/*/*.{h,m}",
+    "SosoBtciOSToolKit/**/*.{h,m}",
+    "SosoBtciOSToolKit/**/*/*.swift",
+    "SosoBtciOSToolKit/**/*.swift"
+  ],
+  "public_header_files": [
+    "SosoBtciOSToolKit/*.h",
+    "SosoBtciOSToolKit/**/*/*.h"
+  ],
+  "resources": [
+    "SosoBtciOSToolKit/**/*/*.bundle",
+    "SosoBtciOSToolKit/**/*.bundle",
+    "SosoBtciOSToolKit/**/*.xib",
+    "SosoBtciOSToolKit/**/*/*.xib"
+  ],
+  "subspecs": [
+    {
+      "name": "GTMBase64",
+      "source_files": "SosoBtciOSToolkit/Efficient/GTMBase64.{h,m}",
+      "requires_arc": false
+    }
+  ]
+}
