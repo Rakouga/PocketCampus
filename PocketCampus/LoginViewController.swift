@@ -46,11 +46,12 @@ class LoginViewController: UIViewController {
             BmobUser.loginWithUsernameInBackground(account, password: password, block:{
                 (user,error) in
                 if (user != nil) {//登录成功
-                    self.view.makeToast("登陆成功")
+                    self.view.makeToast("登陆成功", duration: 3, position: CSToastPositionCenter)
                     let rootView = sb.instantiateViewControllerWithIdentifier("RootTabViewController") as! RootTabViewController
                     self.presentViewController(rootView, animated: true, completion: nil)
                 }else{//登录失败
-                    self.view.makeToast("\(error)")
+                    self.view.makeToast("账号或密码有误", duration: 3, position: CSToastPositionCenter)
+                    print("\(error)")
                 }
             })
         }

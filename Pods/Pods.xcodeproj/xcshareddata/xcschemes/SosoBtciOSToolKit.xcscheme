@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'B5C4258E87F80B8F28C85478'
+               BlueprintIdentifier = '901BC0C05739BF7B24A20DAB'
                BlueprintName = 'SosoBtciOSToolKit'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libSosoBtciOSToolKit.a'>

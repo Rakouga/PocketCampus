@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D3191CF48DF88C6CF5550488'
+               BlueprintIdentifier = 'A7D6900360E3544C21D86269'
                BlueprintName = 'CZPicker'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libCZPicker.a'>
