@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'B5C4258E87F80B8F28C85478'
-               BlueprintName = 'SosoBtciOSToolKit'
+               BlueprintIdentifier = '3750DC2CE7F48E0A9467CF8D'
+               BlueprintName = 'Pods-PocketCampus'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libSosoBtciOSToolKit.a'>
+               BuildableName = 'libPods-PocketCampus.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

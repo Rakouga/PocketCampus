@@ -13,8 +13,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var accountTextField: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     
-    var account:String?
-    var password:String?
+//    var account:String?
+//    var password:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,17 +24,14 @@ class LoginViewController: UIViewController {
     /**
      检查账号密码的格式是否正确
     */
-    func cheakFormat()->Bool{
-        
-        account = accountTextField.text
-        password = passwordTextfield.text
+    func cheakFormat(account:String?,password:String?)->Bool{
         
         if account == "" || account == nil {
-//            self.view.makeToast("请输入用户名")
+            self.view.makeToast("账号不能为空")
             return false
         }
         if password == "" || password == nil {
-//            self.view.makeToast("请输入密码")
+            self.view.makeToast("密码不能为空")
             return false
         }
         
@@ -42,8 +39,20 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func login(sender: AnyObject) {
-        if cheakFormat() {
-            
+        let account = accountTextField.text
+        let password = passwordTextfield.text
+        
+        if cheakFormat(account,password: password) {
+            BmobUser.loginWithUsernameInBackground(account, password: password, block:{
+                (user,error) in
+                if (user != nil) {//登录成功
+                    self.view.makeToast("登陆成功")
+                    let rootView = sb.instantiateViewControllerWithIdentifier("RootTabViewController") as! RootTabViewController
+                    self.presentViewController(rootView, animated: true, completion: nil)
+                }else{//登录失败
+                    self.view.makeToast("\(error)")
+                }
+            })
         }
     }
 

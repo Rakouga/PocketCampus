@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'B5C4258E87F80B8F28C85478'
-               BlueprintName = 'SosoBtciOSToolKit'
+               BlueprintIdentifier = 'D3191CF48DF88C6CF5550488'
+               BlueprintName = 'CZPicker'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libSosoBtciOSToolKit.a'>
+               BuildableName = 'libCZPicker.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
