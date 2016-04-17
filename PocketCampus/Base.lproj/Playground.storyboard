@@ -9,7 +9,7 @@
         <!--操场-->
         <scene sceneID="Zcw-jf-O7t">
             <objects>
-                <viewController id="qPt-Cw-HEU" sceneMemberID="viewController">
+                <viewController id="qPt-Cw-HEU" customClass="PlaygroundViewController" customModule="PocketCampus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="e8q-1l-9jh"/>
                         <viewControllerLayoutGuide type="bottom" id="0c6-Zn-Ks4"/>
@@ -25,17 +25,65 @@
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FRt-nq-mVk">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FRt-nq-mVk">
                                 <rect key="frame" x="0.0" y="44" width="375" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="PNi-Ve-8ix">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postListCell" rowHeight="80" id="PNi-Ve-8ix" customClass="PlaygroundTableViewCell" customModule="PocketCampus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PNi-Ve-8ix" id="diL-Y0-Y16">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题要很长很炒股标题要很长很炒股标题要很" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqv-5q-y2S">
+                                                    <rect key="frame" x="10" y="10" width="355" height="19"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXS-yj-KRd">
+                                                    <rect key="frame" x="10" y="34" width="36" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016-04-17  14:32:57" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnQ-wO-ImR">
+                                                    <rect key="frame" x="223" y="34" width="142" height="14.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="142" id="6Ee-fi-vjn"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" misplaced="YES" text="爱的世界卡拉是减肥快乐的;大厦附近开了的撒娇分开了的" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAw-C9-neA" userLabel="内容">
+                                                    <rect key="frame" x="10" y="53" width="355" height="36.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="aAw-C9-neA" secondAttribute="trailing" constant="10" id="BjB-mY-8Hf"/>
+                                                <constraint firstAttribute="trailing" secondItem="sqv-5q-y2S" secondAttribute="trailing" constant="10" id="LHX-se-vrX"/>
+                                                <constraint firstItem="OXS-yj-KRd" firstAttribute="top" secondItem="sqv-5q-y2S" secondAttribute="bottom" constant="5" id="Loz-lG-hMk"/>
+                                                <constraint firstAttribute="trailing" secondItem="hnQ-wO-ImR" secondAttribute="trailing" constant="10" id="UV1-B7-fzy"/>
+                                                <constraint firstItem="OXS-yj-KRd" firstAttribute="leading" secondItem="diL-Y0-Y16" secondAttribute="leading" constant="10" id="YoH-Ia-Iq7"/>
+                                                <constraint firstItem="hnQ-wO-ImR" firstAttribute="top" secondItem="sqv-5q-y2S" secondAttribute="bottom" constant="5" id="foB-bb-fts"/>
+                                                <constraint firstItem="sqv-5q-y2S" firstAttribute="top" secondItem="diL-Y0-Y16" secondAttribute="top" constant="10" id="l7q-kX-jXN"/>
+                                                <constraint firstItem="aAw-C9-neA" firstAttribute="leading" secondItem="diL-Y0-Y16" secondAttribute="leading" constant="10" id="wcr-0b-V57"/>
+                                                <constraint firstAttribute="bottom" secondItem="aAw-C9-neA" secondAttribute="bottom" constant="10" id="yMG-p8-F39"/>
+                                                <constraint firstItem="aAw-C9-neA" firstAttribute="top" secondItem="hnQ-wO-ImR" secondAttribute="bottom" constant="5" id="yd2-Jp-UKr"/>
+                                                <constraint firstItem="sqv-5q-y2S" firstAttribute="leading" secondItem="diL-Y0-Y16" secondAttribute="leading" constant="10" id="zp0-HW-SpG"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="hnQ-wO-ImR" id="f53-R5-VFi"/>
+                                            <outlet property="postContentLabel" destination="aAw-C9-neA" id="wN0-Fm-pdd"/>
+                                            <outlet property="postTitleLabel" destination="sqv-5q-y2S" id="Kuh-vy-zQs"/>
+                                            <outlet property="userNameLabel" destination="OXS-yj-KRd" id="cmG-O3-1SF"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -65,12 +113,13 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="postTableView" destination="FRt-nq-mVk" id="Zlk-MV-cRk"/>
                         <segue destination="RGO-My-bVT" kind="presentation" id="UsN-cx-O9h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZB-wV-fvT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1590" y="286"/>
+            <point key="canvasLocation" x="1589.5" y="285.5"/>
         </scene>
         <!--Create Post View Controller-->
         <scene sceneID="ay3-7S-8vp">
