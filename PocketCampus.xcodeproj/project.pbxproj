@@ -54,6 +54,9 @@
 		EE014D4B1CC2258D009C9056 /* SCPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE014D271CC2258D009C9056 /* SCPath.swift */; };
 		EE014D4C1CC2258D009C9056 /* Sdelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE014D281CC2258D009C9056 /* Sdelay.swift */; };
 		EE014D4E1CC2258D009C9056 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE014D2B1CC2258D009C9056 /* SwiftyJSON.swift */; };
+		EE014D501CC32696009C9056 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE014D4F1CC32696009C9056 /* ForgotPasswordViewController.swift */; };
+		EEAE79E01CC35DD5000ECFB0 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE79DF1CC35DD5000ECFB0 /* CreatePostViewController.swift */; };
+		EEAE79E21CC36BCD000ECFB0 /* PlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE79E11CC36BCD000ECFB0 /* PlaygroundViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +138,9 @@
 		EE014D271CC2258D009C9056 /* SCPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCPath.swift; sourceTree = "<group>"; };
 		EE014D281CC2258D009C9056 /* Sdelay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sdelay.swift; sourceTree = "<group>"; };
 		EE014D2B1CC2258D009C9056 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		EE014D4F1CC32696009C9056 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		EEAE79DF1CC35DD5000ECFB0 /* CreatePostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
+		EEAE79E11CC36BCD000ECFB0 /* PlaygroundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaygroundViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,9 +181,11 @@
 		2C1989C81CC0D9A10086DF98 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				EEAE79DE1CC35DA0000ECFB0 /* Playground */,
 				2C1989CC1CC0DAE10086DF98 /* LoginViewController.swift */,
 				2C1989CE1CC0E3BF0086DF98 /* SignUpViewController.swift */,
 				EE014CFB1CC1F5DB009C9056 /* RootTabViewController.swift */,
+				EE014D4F1CC32696009C9056 /* ForgotPasswordViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -332,6 +340,15 @@
 				EE014D2B1CC2258D009C9056 /* SwiftyJSON.swift */,
 			);
 			path = SwiftyJSON;
+			sourceTree = "<group>";
+		};
+		EEAE79DE1CC35DA0000ECFB0 /* Playground */ = {
+			isa = PBXGroup;
+			children = (
+				EEAE79DF1CC35DD5000ECFB0 /* CreatePostViewController.swift */,
+				EEAE79E11CC36BCD000ECFB0 /* PlaygroundViewController.swift */,
+			);
+			name = Playground;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -522,6 +539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE014D421CC2258D009C9056 /* DatePickerUIView.swift in Sources */,
+				EEAE79E01CC35DD5000ECFB0 /* CreatePostViewController.swift in Sources */,
 				2C1989CD1CC0DAE10086DF98 /* LoginViewController.swift in Sources */,
 				2C53FE6D1CBB388300033505 /* AppDelegate.swift in Sources */,
 				EE014D481CC2258D009C9056 /* SCFile.swift in Sources */,
@@ -533,6 +551,7 @@
 				EE014D321CC2258D009C9056 /* Error.swift in Sources */,
 				EE014D471CC2258D009C9056 /* SCCamera.swift in Sources */,
 				EE014D3B1CC2258D009C9056 /* ServerTrustPolicy.swift in Sources */,
+				EEAE79E21CC36BCD000ECFB0 /* PlaygroundViewController.swift in Sources */,
 				EE014D441CC2258D009C9056 /* OnewaySlider.swift in Sources */,
 				EE014D2D1CC2258D009C9056 /* ASValueTrackingSlider.m in Sources */,
 				EE014D411CC2258D009C9056 /* BallSlider.swift in Sources */,
@@ -547,6 +566,7 @@
 				EE014D341CC2258D009C9056 /* Manager.swift in Sources */,
 				EE014D3E1CC2258D009C9056 /* Validation.swift in Sources */,
 				EE014D2F1CC2258D009C9056 /* ACBlocks.swift in Sources */,
+				EE014D501CC32696009C9056 /* ForgotPasswordViewController.swift in Sources */,
 				EE014D3C1CC2258D009C9056 /* Stream.swift in Sources */,
 				EE014D301CC2258D009C9056 /* Alamofire.swift in Sources */,
 				EE014D3F1CC2258D009C9056 /* AlamofireExtension.swift in Sources */,

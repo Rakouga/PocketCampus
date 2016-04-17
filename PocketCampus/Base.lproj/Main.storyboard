@@ -273,10 +273,10 @@
             </objects>
             <point key="canvasLocation" x="-954.5" y="1305.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Forgot Password View Controller-->
         <scene sceneID="TSb-RX-ZEZ">
             <objects>
-                <viewController id="xtK-R0-Pg4" sceneMemberID="viewController">
+                <viewController id="xtK-R0-Pg4" customClass="ForgotPasswordViewController" customModule="PocketCampus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sDx-bp-h1z"/>
                         <viewControllerLayoutGuide type="bottom" id="xZm-TJ-BZN"/>
@@ -302,14 +302,17 @@
                                     <navigationItem title="忘记密码" id="IGu-OR-x1X">
                                         <barButtonItem key="leftBarButtonItem" image="ic_back" id="Gad-Gc-VV6">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="back:" destination="xtK-R0-Pg4" id="qZT-TB-mbj"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入账号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eab-sN-Gk0">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入账号" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eab-sN-Gk0">
                                 <rect key="frame" x="20" y="94" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxs-Tf-R4g">
                                 <rect key="frame" x="40" y="162" width="295" height="30"/>
@@ -317,6 +320,9 @@
                                 <state key="normal" title="确定">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="confirm:" destination="xtK-R0-Pg4" eventType="touchUpInside" id="erd-oa-CK5"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(仅限验证过邮箱的用户能找回密码)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbH-UR-wc5">
                                 <rect key="frame" x="93" y="127" width="189" height="15"/>
@@ -343,6 +349,9 @@
                             <constraint firstItem="eab-sN-Gk0" firstAttribute="leading" secondItem="mRY-L3-fce" secondAttribute="leading" constant="20" id="zpX-kb-6vb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextfield" destination="eab-sN-Gk0" id="T68-FX-rJa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8F2-Nx-8yB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
