@@ -18,26 +18,35 @@ class PlaygroundViewController: UIViewController,UITableViewDataSource ,UITableV
         super.viewDidLoad()
         
         self.postTableView.dataSource = self
+        self.postTableView.delegate = self
         
         getPostList()
+        
+        //接收通知,刷新帖子列表
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "getPostList", name: "getPostListNotification", object: nil)
     }
     
     func getPostList(){
+        self.postList.removeAll();
         let postQuery = BmobQuery(className: "Post")
         postQuery.orderByDescending("createdAt")
         postQuery.findObjectsInBackgroundWithBlock { (array, error) in
-            for data in array{
-                var dic = Dictionary<String, String>()
-                
-                dic["postID"] = (data as! BmobObject).objectForKey("objectId") as! String
-                dic["userName"] = (data as! BmobObject).objectForKey("userName") as! String
-                dic["postTitle"] = (data as! BmobObject).objectForKey("title") as! String
-                dic["postContent"] = (data as! BmobObject).objectForKey("content") as! String
-                dic["date"] = (data as! BmobObject).objectForKey("createdAt") as! String
-                
-                self.postList.append(dic)
+            if error == nil{
+                for data in array{
+                    var dic = Dictionary<String, String>()
+                    
+                    dic["postID"] = (data as! BmobObject).objectForKey("objectId") as! String
+                    dic["userName"] = (data as! BmobObject).objectForKey("userName") as! String
+                    dic["postTitle"] = (data as! BmobObject).objectForKey("title") as! String
+                    dic["postContent"] = (data as! BmobObject).objectForKey("content") as! String
+                    dic["date"] = (data as! BmobObject).objectForKey("createdAt") as! String
+                    
+                    self.postList.append(dic)
+                }
+                self.postTableView.reloadData()
+            }else{
+                print(error);
             }
-            self.postTableView.reloadData()
         }
     }
     
@@ -62,6 +71,28 @@ class PlaygroundViewController: UIViewController,UITableViewDataSource ,UITableV
         
         return cell
         
+    }
+    
+    //点击后,跳转到帖子内容中
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //当手指离开时,某行的选中状态消失(阴影消失)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        var postID:String!
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! PlaygroundTableViewCell
+        postID = cell.postID
+        
+        //将项目id(id)作为参数,并跳转到ProjectDetailViewController
+        self.performSegueWithIdentifier("toPostDetail", sender: postID)
+    }
+    
+    /**
+     在这个方法中给新页面传递参数
+     */
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "toPostDetail" {
+            let controller = segue.destinationViewController as! PostDetailViewController
+            controller.postID = sender as! String
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -10,7 +10,7 @@ import UIKit
 
 class CreatePostViewController: UIViewController {
     @IBOutlet weak var postTitleTextField: UITextField!
-    @IBOutlet weak var postContentTextfield: UITextView!
+    @IBOutlet weak var postContentTextView: UITextView!
     
     let user = BmobUser.getCurrentUser()
     var userID:String!
@@ -20,6 +20,13 @@ class CreatePostViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //给帖子内容的textview添加描边
+        self.postContentTextView.layer.borderWidth = 1
+        self.postContentTextView.layer.borderColor = UIColor.lightGrayColor().CGColor
+        self.postContentTextView.layer.cornerRadius = 3
+        self.postContentTextView.layer.masksToBounds = true
+        
         
         if self.user != nil{
             self.userName = self.user.username
@@ -32,7 +39,7 @@ class CreatePostViewController: UIViewController {
     
     func cheakFormat()->Bool{
         self.postTitle = self.postTitleTextField.text
-        self.postContent = self.postContentTextfield.text
+        self.postContent = self.postContentTextView.text
         
         if self.user == nil{
             return false
@@ -60,6 +67,8 @@ class CreatePostViewController: UIViewController {
             post.saveInBackgroundWithResultBlock({ (isSuccessful, error) in
                 if isSuccessful {
                     self.view.makeToast("发帖成功", duration: 2, position: CSToastPositionCenter)
+                    //发送通知,刷新帖子列表
+                    NSNotificationCenter.defaultCenter().postNotificationName("getPostListNotification", object: nil)
                     delay(2, task: { () -> () in
                         self.dismissViewControllerAnimated(true, completion: nil)
                     })
@@ -73,6 +82,11 @@ class CreatePostViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func back(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

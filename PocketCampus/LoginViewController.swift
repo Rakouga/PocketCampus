@@ -18,7 +18,18 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        //读出本机的存
+        readUserIfo()
+        if Account != nil {
+            self.accountTextField.text = Account
+        }
+        if Password != nil {
+            self.passwordTextfield.text = Password
+        }
     }
     
     /**
@@ -46,6 +57,12 @@ class LoginViewController: UIViewController {
             BmobUser.loginWithUsernameInBackground(account, password: password, block:{
                 (user,error) in
                 if (user != nil) {//登录成功
+                    
+                    //写入本地保存
+                    Account = account
+                    Password      = password
+                    writeUserInfo()
+                    
                     self.view.makeToast("登陆成功", duration: 3, position: CSToastPositionCenter)
                     let rootView = sb.instantiateViewControllerWithIdentifier("RootTabViewController") as! RootTabViewController
                     self.presentViewController(rootView, animated: true, completion: nil)

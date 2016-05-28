@@ -15,7 +15,7 @@ var jsessionid = ""
 var userName = ""
 var photoColor = ""
 var role = 1
-var idCardOrPhone   : String?
+var Account   : String?
 var Password        : String?
 var userEmail       : String?
 //未读聊天消息
@@ -30,14 +30,14 @@ let ud = NSUserDefaults.standardUserDefaults()
 //写进手机保存
 func writeUserInfo(){
     
-    ud.setObject(idCardOrPhone, forKey: "idCardOrPhone")
+    ud.setObject(Account, forKey: "account")
     ud.setObject(Password,     forKey: "password")
     
 }
 
 //从手机读出
 func readUserIfo(){
-    idCardOrPhone = ud.valueForKey("idCardOrPhone") as? String
+    Account = ud.valueForKey("account") as? String
     Password      = ud.valueForKey("password")     as? String
     
 }

@@ -58,6 +58,9 @@
 		EEAE79E01CC35DD5000ECFB0 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE79DF1CC35DD5000ECFB0 /* CreatePostViewController.swift */; };
 		EEAE79E21CC36BCD000ECFB0 /* PlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE79E11CC36BCD000ECFB0 /* PlaygroundViewController.swift */; };
 		EEAE79E41CC376B0000ECFB0 /* PlaygroundTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE79E31CC376B0000ECFB0 /* PlaygroundTableViewCell.swift */; };
+		EECAA7091CE74D1F00D6C2C8 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECAA7081CE74D1F00D6C2C8 /* PostDetailViewController.swift */; };
+		EECAA70C1CE7527500D6C2C8 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECAA70B1CE7527500D6C2C8 /* PostTableViewCell.swift */; };
+		EECAA70E1CE7528800D6C2C8 /* ReplyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECAA70D1CE7528800D6C2C8 /* ReplyTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +146,9 @@
 		EEAE79DF1CC35DD5000ECFB0 /* CreatePostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		EEAE79E11CC36BCD000ECFB0 /* PlaygroundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaygroundViewController.swift; sourceTree = "<group>"; };
 		EEAE79E31CC376B0000ECFB0 /* PlaygroundTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaygroundTableViewCell.swift; sourceTree = "<group>"; };
+		EECAA7081CE74D1F00D6C2C8 /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		EECAA70B1CE7527500D6C2C8 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		EECAA70D1CE7528800D6C2C8 /* ReplyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,11 +353,22 @@
 		EEAE79DE1CC35DA0000ECFB0 /* Playground */ = {
 			isa = PBXGroup;
 			children = (
+				EECAA70A1CE7524E00D6C2C8 /* cell */,
 				EEAE79DF1CC35DD5000ECFB0 /* CreatePostViewController.swift */,
 				EEAE79E11CC36BCD000ECFB0 /* PlaygroundViewController.swift */,
-				EEAE79E31CC376B0000ECFB0 /* PlaygroundTableViewCell.swift */,
+				EECAA7081CE74D1F00D6C2C8 /* PostDetailViewController.swift */,
 			);
 			name = Playground;
+			sourceTree = "<group>";
+		};
+		EECAA70A1CE7524E00D6C2C8 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				EEAE79E31CC376B0000ECFB0 /* PlaygroundTableViewCell.swift */,
+				EECAA70B1CE7527500D6C2C8 /* PostTableViewCell.swift */,
+				EECAA70D1CE7528800D6C2C8 /* ReplyTableViewCell.swift */,
+			);
+			name = cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -542,7 +559,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE014D421CC2258D009C9056 /* DatePickerUIView.swift in Sources */,
+				EECAA7091CE74D1F00D6C2C8 /* PostDetailViewController.swift in Sources */,
 				EEAE79E01CC35DD5000ECFB0 /* CreatePostViewController.swift in Sources */,
+				EECAA70C1CE7527500D6C2C8 /* PostTableViewCell.swift in Sources */,
 				2C1989CD1CC0DAE10086DF98 /* LoginViewController.swift in Sources */,
 				2C53FE6D1CBB388300033505 /* AppDelegate.swift in Sources */,
 				EE014D481CC2258D009C9056 /* SCFile.swift in Sources */,
@@ -565,6 +584,7 @@
 				EE014D381CC2258D009C9056 /* Request.swift in Sources */,
 				EE014D431CC2258D009C9056 /* DateTools.swift in Sources */,
 				2C1989CF1CC0E3BF0086DF98 /* SignUpViewController.swift in Sources */,
+				EECAA70E1CE7528800D6C2C8 /* ReplyTableViewCell.swift in Sources */,
 				EE014D4C1CC2258D009C9056 /* Sdelay.swift in Sources */,
 				EE014D4E1CC2258D009C9056 /* SwiftyJSON.swift in Sources */,
 				EE014D341CC2258D009C9056 /* Manager.swift in Sources */,
