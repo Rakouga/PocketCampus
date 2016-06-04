@@ -18,6 +18,8 @@ class PostDetailViewController: UIViewController ,UITableViewDataSource,UITableV
     //NSLayoutConstraint
     @IBOutlet weak var postViewHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var replyView: UIView!
+    @IBOutlet weak var replyTextView: UITextView!
     var postID:String?
     var repliesList = [Dictionary<String,String>]()//保存回帖列表
     
@@ -33,6 +35,9 @@ class PostDetailViewController: UIViewController ,UITableViewDataSource,UITableV
         self.postDetailTableView.estimatedRowHeight = 50
         self.postDetailTableView.rowHeight = UITableViewAutomaticDimension
         
+        //键盘事件
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(PostDetailViewController.keyBoardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(PostDetailViewController.keyBoardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -100,16 +105,6 @@ class PostDetailViewController: UIViewController ,UITableViewDataSource,UITableV
             return self.repliesList.count;
     }
     
-//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        let cell = self.postDetailTableView.cellForRowAtIndexPath(indexPath) as! ReplyTableViewCell
-//        let label = cell.contentLabel
-//        label.sizeToFit()
-//        
-//        return label.frame.height + 40
-////        return 50
-//    }
-//    
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         //返回回复的内容
@@ -123,7 +118,103 @@ class PostDetailViewController: UIViewController ,UITableViewDataSource,UITableV
         
         return cell
     }
+    
+    /**
+     键盘出现时触发该方法
+     */
+    func keyBoardWillShow(note:NSNotification)
+    {
+        let userInfo:NSDictionary  = note.userInfo!
+        let  keyBoardBounds = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        let duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+        
+        let keyBoardBoundsRect = self.view.convertRect(keyBoardBounds, toView:nil)
+        
+        //        var keyBaoardViewFrame = overallscrollview.frame //方便以后调用
+        let deltaY = keyBoardBoundsRect.size.height
+        
+        let animations:(() -> Void) = {
+            
+            self.replyView.transform = CGAffineTransformMakeTranslation(0,heightOfWindow-484-deltaY)
+        }
+        
+        if duration > 0 {
+            let options = UIViewAnimationOptions(rawValue: UInt((userInfo[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).integerValue << 16))
+            
+            UIView.animateWithDuration(duration, delay: 0, options:options, animations: animations, completion: nil)
+        }else{
+            
+            animations()
+        }
+    }
+    
+    /**
+     键盘消失时触发该方法
+     
+     */
+    func keyBoardWillHide(note:NSNotification)
+    {
+        
+        let userInfo:NSDictionary  = note.userInfo!
+        
+        let duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+        
+        
+        let animations:(() -> Void) = {
+            
+            self.replyView.transform = CGAffineTransformIdentity
+            
+        }
+        
+        if duration > 0 {
+            let options = UIViewAnimationOptions(rawValue: UInt((userInfo[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).integerValue << 16))
+            
+            UIView.animateWithDuration(duration, delay: 0, options:options, animations: animations, completion: nil)
+        }else{
+            animations()
+        }
+    }
 
+    /**
+     点击发帖
+     */
+    @IBAction func reply(sender: AnyObject) {
+        if self.replyTextView.text != nil && self.replyTextView.text != "" {
+            
+            let user = BmobUser.getCurrentUser()
+            let userName = user.username
+            let userID = user.objectId
+            let reply = self.replyTextView.text
+            
+            if user != nil{
+                let object = BmobObject(className: "Replies")
+                object.setObject(self.postID, forKey: "postID")
+                object.setObject(userID, forKey: "userID")
+                object.setObject(userName, forKey: "userName")
+                object.setObject(reply, forKey: "replay")
+                object.saveInBackgroundWithResultBlock({ (isSuccessful, error) in
+                    if isSuccessful {
+                        self.view.makeToast("发帖成功", duration: 2, position: CSToastPositionCenter)
+                        //发送通知,刷新帖子列表
+                        NSNotificationCenter.defaultCenter().postNotificationName("getPostListNotification", object: nil)
+                        delay(2, task: { () -> () in
+                            self.dismissViewControllerAnimated(true, completion: nil)
+                        })
+                    }else if (error != nil){
+                        self.view.makeToast("回复失败", duration: 2, position: CSToastPositionCenter)
+                        print("\(error)")
+                    }else{
+                        self.view.makeToast("回复失败,原因我也不知道", duration: 2, position: CSToastPositionCenter)
+                    }
+                })
+                
+            }else{
+                self.view.makeToast("请先登录")
+            }
+            
+        }
+    }
+    
     @IBAction func back(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }

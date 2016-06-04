@@ -9,7 +9,7 @@
         <!--公告栏-->
         <scene sceneID="ADy-rz-bFP">
             <objects>
-                <viewController id="XdR-v0-UJq" sceneMemberID="viewController">
+                <viewController id="XdR-v0-UJq" customClass="AnnouncementViewController" customModule="PocketCampus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cv4-9i-Qis"/>
                         <viewControllerLayoutGuide type="bottom" id="pe2-TJ-f0O"/>
@@ -29,13 +29,103 @@
                                 <rect key="frame" x="0.0" y="108" width="375" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="rtc-kP-rJx">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="annoucementCell" rowHeight="80" id="rtc-kP-rJx" customClass="AnnouncementTableViewCell" customModule="PocketCampus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rtc-kP-rJx" id="WX3-ov-RLW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[类型]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LX3-vu-u1k">
+                                                    <rect key="frame" x="8" y="8" width="45" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="45" id="XJP-G6-Txj"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5N-g5-BvB">
+                                                    <rect key="frame" x="63" y="8" width="304" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="0hd-i0-DiS"/>
+                                                        <constraint firstAttribute="width" constant="309" id="Gvj-wb-gwd"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="0hd-i0-DiS"/>
+                                                            <exclude reference="Gvj-wb-gwd"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="高水平大学建设办公室" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pK1-DL-ms6">
+                                                    <rect key="frame" x="8" y="31" width="120" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="RJV-Ut-A0S"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="RJV-Ut-A0S"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016-06-04  11:14:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgO-j3-UqZ">
+                                                    <rect key="frame" x="243" y="31" width="123.5" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内容简介" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CB-aK-D2L">
+                                                    <rect key="frame" x="8" y="53" width="359" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="UgO-j3-UqZ" firstAttribute="centerY" secondItem="pK1-DL-ms6" secondAttribute="centerY" id="3ta-8b-wxh"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="5CB-aK-D2L" secondAttribute="trailing" id="5JG-3g-DOR"/>
+                                                <constraint firstItem="pK1-DL-ms6" firstAttribute="centerX" secondItem="LX3-vu-u1k" secondAttribute="centerX" id="6dX-48-Cqi"/>
+                                                <constraint firstItem="a5N-g5-BvB" firstAttribute="centerX" secondItem="LX3-vu-u1k" secondAttribute="centerX" id="FsY-gy-xmG"/>
+                                                <constraint firstItem="a5N-g5-BvB" firstAttribute="leading" secondItem="LX3-vu-u1k" secondAttribute="trailing" constant="10" id="I1l-Sn-mTH"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="pK1-DL-ms6" secondAttribute="leading" id="Lu1-W8-zcJ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="a5N-g5-BvB" secondAttribute="trailing" id="Ntj-qV-3aT"/>
+                                                <constraint firstItem="LX3-vu-u1k" firstAttribute="leading" secondItem="WX3-ov-RLW" secondAttribute="leadingMargin" id="csS-JT-iGI"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="a5N-g5-BvB" secondAttribute="trailing" id="cxx-cf-9zs"/>
+                                                <constraint firstItem="5CB-aK-D2L" firstAttribute="top" secondItem="pK1-DL-ms6" secondAttribute="bottom" constant="7.5" id="hTw-yj-LFb"/>
+                                                <constraint firstItem="LX3-vu-u1k" firstAttribute="top" secondItem="WX3-ov-RLW" secondAttribute="topMargin" id="oyh-Sf-Dyn"/>
+                                                <constraint firstItem="UgO-j3-UqZ" firstAttribute="leading" secondItem="pK1-DL-ms6" secondAttribute="trailing" constant="100" id="qEg-lZ-7cX"/>
+                                                <constraint firstItem="pK1-DL-ms6" firstAttribute="top" secondItem="LX3-vu-u1k" secondAttribute="bottom" constant="5" id="qRV-yn-7ha"/>
+                                                <constraint firstItem="a5N-g5-BvB" firstAttribute="leading" secondItem="LX3-vu-u1k" secondAttribute="trailing" constant="9" id="qyy-hb-coE"/>
+                                                <constraint firstItem="a5N-g5-BvB" firstAttribute="centerY" secondItem="LX3-vu-u1k" secondAttribute="centerY" id="tNB-Yb-d3R"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="UgO-j3-UqZ" secondAttribute="trailing" id="u1d-in-lXi"/>
+                                                <constraint firstItem="a5N-g5-BvB" firstAttribute="top" secondItem="WX3-ov-RLW" secondAttribute="top" id="u6O-Rc-00V"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="5CB-aK-D2L" secondAttribute="leading" id="yrz-FK-t21"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="6dX-48-Cqi"/>
+                                                    <exclude reference="FsY-gy-xmG"/>
+                                                    <exclude reference="Ntj-qV-3aT"/>
+                                                    <exclude reference="qyy-hb-coE"/>
+                                                    <exclude reference="u6O-Rc-00V"/>
+                                                    <exclude reference="qEg-lZ-7cX"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="contentLabel" destination="5CB-aK-D2L" id="fdM-AT-ItJ"/>
+                                            <outlet property="dateLabel" destination="UgO-j3-UqZ" id="35b-d7-n3P"/>
+                                            <outlet property="departmentLabel" destination="pK1-DL-ms6" id="TVP-Jb-R5S"/>
+                                            <outlet property="titleLabel" destination="a5N-g5-BvB" id="P0y-4e-2gB"/>
+                                            <outlet property="typeLabel" destination="LX3-vu-u1k" id="gXA-F3-foc"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -65,6 +155,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="announcementTableView" destination="Suc-aI-inQ" id="gRN-Rd-v1s"/>
                         <segue destination="m2m-Tp-66T" kind="presentation" id="yZl-Vk-a0X"/>
                     </connections>
                 </viewController>
@@ -72,10 +163,10 @@
             </objects>
             <point key="canvasLocation" x="1589.5" y="1052.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Announcement View Controller-->
         <scene sceneID="0sX-hD-S87">
             <objects>
-                <viewController id="8Te-cN-nC1" sceneMemberID="viewController">
+                <viewController id="8Te-cN-nC1" customClass="CreateAnnouncementViewController" customModule="PocketCampus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iwu-8t-d5v"/>
                         <viewControllerLayoutGuide type="bottom" id="YKb-nj-le6"/>
@@ -101,6 +192,9 @@
                                     <navigationItem title="新建公告" id="dyo-j2-ork">
                                         <barButtonItem key="leftBarButtonItem" image="ic_back" id="e6k-tJ-7qV">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="back:" destination="8Te-cN-nC1" id="a96-PC-YER"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -222,10 +316,10 @@
             </objects>
             <point key="canvasLocation" x="2019.5" y="380.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Announcement Detail View Controller-->
         <scene sceneID="BwB-jN-rrC">
             <objects>
-                <viewController id="m2m-Tp-66T" sceneMemberID="viewController">
+                <viewController id="m2m-Tp-66T" customClass="AnnouncementDetailViewController" customModule="PocketCampus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BCg-id-5gk"/>
                         <viewControllerLayoutGuide type="bottom" id="zno-Dn-Tys"/>
@@ -531,10 +625,6 @@ class AllProjectViewController: UIViewController , UIScrollViewDelegate, UITable
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVb-ir-Y9G">
-                                <rect key="frame" x="10" y="174" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="公告标题" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGO-Ao-hJX">
                                 <rect key="frame" x="10" y="74" width="339" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>

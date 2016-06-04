@@ -395,6 +395,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozp-tN-bDF">
                                         <rect key="frame" x="337" y="10" width="30" height="30"/>
                                         <state key="normal" title="发帖"/>
+                                        <connections>
+                                            <action selector="reply:" destination="RGO-My-bVT" eventType="touchUpInside" id="iy4-vj-mgd"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ent-0A-Fdy">
                                         <rect key="frame" x="10" y="14" width="22" height="22"/>
@@ -458,6 +461,8 @@
                         <outlet property="postTitleLabel" destination="sGx-kU-yES" id="cAg-Hp-MUG"/>
                         <outlet property="postUserNameLabel" destination="sKx-7g-naW" id="Hcr-Qw-C2r"/>
                         <outlet property="postViewHeight" destination="n2h-yQ-Edv" id="etE-d8-PXa"/>
+                        <outlet property="replyTextView" destination="btQ-FJ-AOH" id="OjX-Ag-wQP"/>
+                        <outlet property="replyView" destination="4Ty-nz-bWm" id="G8c-UK-hmG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EfJ-lM-pbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
