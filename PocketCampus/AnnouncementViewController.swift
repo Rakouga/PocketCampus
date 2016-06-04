@@ -21,6 +21,9 @@ class AnnouncementViewController: UIViewController,UITableViewDataSource,UITable
         self.announcementTableView.delegate = self
         
         getAnnouncementList()
+        
+        //接收通知,刷新公告列表
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "getAnnouncementList", name: "getAnnouncementListNotification", object: nil)
     }
 
     /**

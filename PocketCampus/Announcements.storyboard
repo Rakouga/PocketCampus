@@ -235,8 +235,8 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="使用CZPickerView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaA-M3-qaE">
-                                        <rect key="frame" x="64" y="112" width="141" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择单位" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaA-M3-qaE">
+                                        <rect key="frame" x="64" y="112" width="85" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -287,6 +287,9 @@
                                 <state key="normal" title="提交">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="submit:" destination="8Te-cN-nC1" eventType="touchUpInside" id="T75-81-vh9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -311,6 +314,12 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="contentTextView" destination="KLk-cy-l4V" id="Dcr-Mg-4Gr"/>
+                        <outlet property="departmentLabel" destination="uaA-M3-qaE" id="6jA-LR-hzQ"/>
+                        <outlet property="titleLabel" destination="iIX-Qi-1sn" id="YaN-kg-Rcs"/>
+                        <outlet property="typeSegment" destination="11F-YO-Trj" id="etW-j2-Cch"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2EH-6F-q12" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
