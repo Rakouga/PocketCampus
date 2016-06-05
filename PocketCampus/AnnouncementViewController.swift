@@ -76,6 +76,28 @@ class AnnouncementViewController: UIViewController,UITableViewDataSource,UITable
         return 100
     }
     
+    //点击后,跳转到帖子内容中
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //当手指离开时,某行的选中状态消失(阴影消失)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        var announcementID:String!
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! AnnouncementTableViewCell
+        announcementID = cell.announcementID
+        
+        //将项目id(id)作为参数,并跳转到ProjectDetailViewController
+        self.performSegueWithIdentifier("toAnnouncementDetail", sender: announcementID)
+    }
+    
+    /**
+     在这个方法中给新页面传递参数
+     */
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "toAnnouncementDetail" {
+            let controller = segue.destinationViewController as! AnnouncementDetailViewController
+            controller.announcementID = sender as! String
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
