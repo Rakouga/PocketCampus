@@ -62,6 +62,15 @@
 		EEB37D651D008C8300C7618B /* AnnouncementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB37D641D008C8300C7618B /* AnnouncementTableViewCell.swift */; };
 		EEB37D671D008D0900C7618B /* CreateAnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB37D661D008D0900C7618B /* CreateAnnouncementViewController.swift */; };
 		EEB37D691D027A8A00C7618B /* AnnouncementDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB37D681D027A8A00C7618B /* AnnouncementDetailViewController.swift */; };
+		EEB37D6E1D03E0CD00C7618B /* PersonalInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB37D6D1D03E0CD00C7618B /* PersonalInformationTableViewController.swift */; };
+		EEB37D701D03EA3000C7618B /* ChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB37D6F1D03EA3000C7618B /* ChangeViewController.swift */; };
+		EEB37D741D03F5B600C7618B /* PersonalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB37D731D03F5B500C7618B /* PersonalTableViewController.swift */; };
+		EEB37D761D0400BE00C7618B /* LostAndFoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB37D751D0400BE00C7618B /* LostAndFoundViewController.swift */; };
+		EEB37D791D0403BA00C7618B /* LostAndFoundTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB37D781D0403BA00C7618B /* LostAndFoundTableViewCell.swift */; };
+		EEB37D7B1D040C6A00C7618B /* CreateLostAndFoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB37D7A1D040C6A00C7618B /* CreateLostAndFoundViewController.swift */; };
+		EEB37D7D1D0415DA00C7618B /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB37D7C1D0415DA00C7618B /* WeatherViewController.swift */; };
+		EEB37D7F1D04242900C7618B /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB37D7E1D04242900C7618B /* FeedbackViewController.swift */; };
+		EEB37D811D04286000C7618B /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB37D801D04286000C7618B /* AboutUsViewController.swift */; };
 		EECAA7091CE74D1F00D6C2C8 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECAA7081CE74D1F00D6C2C8 /* PostDetailViewController.swift */; };
 		EECAA70E1CE7528800D6C2C8 /* ReplyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECAA70D1CE7528800D6C2C8 /* ReplyTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -153,6 +162,15 @@
 		EEB37D641D008C8300C7618B /* AnnouncementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementTableViewCell.swift; sourceTree = "<group>"; };
 		EEB37D661D008D0900C7618B /* CreateAnnouncementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAnnouncementViewController.swift; sourceTree = "<group>"; };
 		EEB37D681D027A8A00C7618B /* AnnouncementDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementDetailViewController.swift; sourceTree = "<group>"; };
+		EEB37D6D1D03E0CD00C7618B /* PersonalInformationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalInformationTableViewController.swift; sourceTree = "<group>"; };
+		EEB37D6F1D03EA3000C7618B /* ChangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeViewController.swift; sourceTree = "<group>"; };
+		EEB37D731D03F5B500C7618B /* PersonalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalTableViewController.swift; sourceTree = "<group>"; };
+		EEB37D751D0400BE00C7618B /* LostAndFoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LostAndFoundViewController.swift; sourceTree = "<group>"; };
+		EEB37D781D0403BA00C7618B /* LostAndFoundTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LostAndFoundTableViewCell.swift; sourceTree = "<group>"; };
+		EEB37D7A1D040C6A00C7618B /* CreateLostAndFoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateLostAndFoundViewController.swift; sourceTree = "<group>"; };
+		EEB37D7C1D0415DA00C7618B /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		EEB37D7E1D04242900C7618B /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
+		EEB37D801D04286000C7618B /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		EECAA7081CE74D1F00D6C2C8 /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		EECAA70D1CE7528800D6C2C8 /* ReplyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,6 +215,7 @@
 			children = (
 				EEAE79DE1CC35DA0000ECFB0 /* Playground */,
 				EEB37D601D007CD700C7618B /* Announcement */,
+				EEB37D6A1D03DF0400C7618B /* Personal */,
 				2C1989CC1CC0DAE10086DF98 /* LoginViewController.swift */,
 				2C1989CE1CC0E3BF0086DF98 /* SignUpViewController.swift */,
 				EE014CFB1CC1F5DB009C9056 /* RootTabViewController.swift */,
@@ -383,6 +402,30 @@
 			isa = PBXGroup;
 			children = (
 				EEB37D641D008C8300C7618B /* AnnouncementTableViewCell.swift */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
+		EEB37D6A1D03DF0400C7618B /* Personal */ = {
+			isa = PBXGroup;
+			children = (
+				EEB37D771D04039B00C7618B /* cell */,
+				EEB37D6D1D03E0CD00C7618B /* PersonalInformationTableViewController.swift */,
+				EEB37D6F1D03EA3000C7618B /* ChangeViewController.swift */,
+				EEB37D731D03F5B500C7618B /* PersonalTableViewController.swift */,
+				EEB37D751D0400BE00C7618B /* LostAndFoundViewController.swift */,
+				EEB37D7A1D040C6A00C7618B /* CreateLostAndFoundViewController.swift */,
+				EEB37D7C1D0415DA00C7618B /* WeatherViewController.swift */,
+				EEB37D7E1D04242900C7618B /* FeedbackViewController.swift */,
+				EEB37D801D04286000C7618B /* AboutUsViewController.swift */,
+			);
+			name = Personal;
+			sourceTree = "<group>";
+		};
+		EEB37D771D04039B00C7618B /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				EEB37D781D0403BA00C7618B /* LostAndFoundTableViewCell.swift */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -584,6 +627,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE014D421CC2258D009C9056 /* DatePickerUIView.swift in Sources */,
+				EEB37D7D1D0415DA00C7618B /* WeatherViewController.swift in Sources */,
 				EECAA7091CE74D1F00D6C2C8 /* PostDetailViewController.swift in Sources */,
 				EEAE79E01CC35DD5000ECFB0 /* CreatePostViewController.swift in Sources */,
 				2C1989CD1CC0DAE10086DF98 /* LoginViewController.swift in Sources */,
@@ -595,9 +639,13 @@
 				EE014D351CC2258D009C9056 /* MultipartFormData.swift in Sources */,
 				EE014D311CC2258D009C9056 /* Download.swift in Sources */,
 				2C53FEA51CBB41BC00033505 /* Constant.swift in Sources */,
+				EEB37D7F1D04242900C7618B /* FeedbackViewController.swift in Sources */,
 				EE014D321CC2258D009C9056 /* Error.swift in Sources */,
 				EE014D471CC2258D009C9056 /* SCCamera.swift in Sources */,
+				EEB37D7B1D040C6A00C7618B /* CreateLostAndFoundViewController.swift in Sources */,
+				EEB37D701D03EA3000C7618B /* ChangeViewController.swift in Sources */,
 				EEB37D691D027A8A00C7618B /* AnnouncementDetailViewController.swift in Sources */,
+				EEB37D761D0400BE00C7618B /* LostAndFoundViewController.swift in Sources */,
 				EE014D3B1CC2258D009C9056 /* ServerTrustPolicy.swift in Sources */,
 				EEAE79E21CC36BCD000ECFB0 /* PlaygroundViewController.swift in Sources */,
 				EE014D441CC2258D009C9056 /* OnewaySlider.swift in Sources */,
@@ -607,8 +655,10 @@
 				EE014D4A1CC2258D009C9056 /* SCMessageBox.swift in Sources */,
 				EE014D401CC2258D009C9056 /* AudioPlay.swift in Sources */,
 				EE014D4B1CC2258D009C9056 /* SCPath.swift in Sources */,
+				EEB37D6E1D03E0CD00C7618B /* PersonalInformationTableViewController.swift in Sources */,
 				EE014D381CC2258D009C9056 /* Request.swift in Sources */,
 				EE014D431CC2258D009C9056 /* DateTools.swift in Sources */,
+				EEB37D811D04286000C7618B /* AboutUsViewController.swift in Sources */,
 				2C1989CF1CC0E3BF0086DF98 /* SignUpViewController.swift in Sources */,
 				EECAA70E1CE7528800D6C2C8 /* ReplyTableViewCell.swift in Sources */,
 				EEB37D621D00853900C7618B /* AnnouncementViewController.swift in Sources */,
@@ -618,6 +668,7 @@
 				EE014D3E1CC2258D009C9056 /* Validation.swift in Sources */,
 				EE014D2F1CC2258D009C9056 /* ACBlocks.swift in Sources */,
 				EE014D501CC32696009C9056 /* ForgotPasswordViewController.swift in Sources */,
+				EEB37D791D0403BA00C7618B /* LostAndFoundTableViewCell.swift in Sources */,
 				EE014D3C1CC2258D009C9056 /* Stream.swift in Sources */,
 				EE014D301CC2258D009C9056 /* Alamofire.swift in Sources */,
 				EE014D3F1CC2258D009C9056 /* AlamofireExtension.swift in Sources */,
@@ -626,6 +677,7 @@
 				EEB37D651D008C8300C7618B /* AnnouncementTableViewCell.swift in Sources */,
 				EE014D461CC2258D009C9056 /* Regex.swift in Sources */,
 				EE014D391CC2258D009C9056 /* ResponseSerialization.swift in Sources */,
+				EEB37D741D03F5B600C7618B /* PersonalTableViewController.swift in Sources */,
 				EE014D361CC2258D009C9056 /* ParameterEncoding.swift in Sources */,
 				EE014CFC1CC1F5DB009C9056 /* RootTabViewController.swift in Sources */,
 				EE014D2C1CC2258D009C9056 /* ASValuePopUpView.m in Sources */,

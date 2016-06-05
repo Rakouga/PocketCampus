@@ -17,6 +17,7 @@ class PostDetailViewController: UIViewController ,UITableViewDataSource,UITableV
     @IBOutlet weak var postContentLabel: UILabel!
     //NSLayoutConstraint
     @IBOutlet weak var postViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var replyViewBottom: NSLayoutConstraint!
     
     @IBOutlet weak var replyView: UIView!
     @IBOutlet weak var replyTextView: UITextView!
@@ -27,6 +28,9 @@ class PostDetailViewController: UIViewController ,UITableViewDataSource,UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //将回复View放到最上面
+        self.view.bringSubviewToFront(self.replyView)
+        
         self.getPost()
         self.getRepliesList()
         self.postDetailTableView.dataSource = self
@@ -135,7 +139,9 @@ class PostDetailViewController: UIViewController ,UITableViewDataSource,UITableV
         
         let animations:(() -> Void) = {
             
-            self.replyView.transform = CGAffineTransformMakeTranslation(0,heightOfWindow-484-deltaY)
+//            self.replyView.transform = CGAffineTransformMakeTranslation(0,heightOfWindow-484-deltaY)
+            self.replyViewBottom.constant = deltaY 
+        
         }
         
         if duration > 0 {
@@ -162,7 +168,8 @@ class PostDetailViewController: UIViewController ,UITableViewDataSource,UITableV
         
         let animations:(() -> Void) = {
             
-            self.replyView.transform = CGAffineTransformIdentity
+//            self.replyView.transform = CGAffineTransformIdentity
+            self.replyViewBottom.constant = 0
             
         }
         

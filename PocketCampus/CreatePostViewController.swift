@@ -37,7 +37,7 @@ class CreatePostViewController: UIViewController {
 
     }
     
-    func cheakFormat()->Bool{
+    func checkFormat()->Bool{
         self.postTitle = self.postTitleTextField.text
         self.postContent = self.postContentTextView.text
         
@@ -59,7 +59,7 @@ class CreatePostViewController: UIViewController {
         self.postTitle = nil
         self.postContent = nil
         
-        if cheakFormat(){
+        if checkFormat(){
             let post = BmobObject(className: "Post")
             let dic = ["userID":"\(self.userID)","userName":"\(self.userName)","title":"\(self.postTitle)","content":"\(self.postContent)"]
             

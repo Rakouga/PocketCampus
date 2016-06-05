@@ -291,7 +291,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="帖子内容" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwl-sy-uVX" userLabel="Content Label">
-                                        <rect key="frame" x="10" y="60.5" width="363" height="84.5"/>
+                                        <rect key="frame" x="10" y="60" width="363" height="84.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -383,7 +383,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ty-nz-bWm">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="记得代码加边框,圆角" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="btQ-FJ-AOH">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="btQ-FJ-AOH">
                                         <rect key="frame" x="40" y="10" width="287" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -463,6 +463,7 @@
                         <outlet property="postViewHeight" destination="n2h-yQ-Edv" id="etE-d8-PXa"/>
                         <outlet property="replyTextView" destination="btQ-FJ-AOH" id="OjX-Ag-wQP"/>
                         <outlet property="replyView" destination="4Ty-nz-bWm" id="G8c-UK-hmG"/>
+                        <outlet property="replyViewBottom" destination="Zhp-98-zK0" id="cL8-AZ-1pV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EfJ-lM-pbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
