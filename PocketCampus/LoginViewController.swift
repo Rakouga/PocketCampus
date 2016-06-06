@@ -73,6 +73,11 @@ class LoginViewController: UIViewController {
             })
         }
     }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.accountTextField.resignFirstResponder()
+        self.passwordTextfield.resignFirstResponder()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

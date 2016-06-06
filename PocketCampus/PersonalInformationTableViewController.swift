@@ -40,8 +40,8 @@ class PersonalInformationTableViewController: UITableViewController {
             //获取用户名
             self.userNameLabel.text = bUser.username
             //获取手机号码
-            if bUser.objectForKey("phone") != nil {
-                self.phoneLabel.text = bUser.objectForKey("phone") as! String
+            if bUser.objectForKey("mobilePhoneNumber") != nil {
+                self.phoneLabel.text = bUser.objectForKey("mobilePhoneNumber") as! String
             }
             //获取学号
             if bUser.objectForKey("studentNumber") != nil {

@@ -42,6 +42,11 @@ class ForgotPasswordViewController: UIViewController {
         }
     }
     
+    //点击屏幕后键盘消失
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.emailTextfield.resignFirstResponder()
+    }
+    
     @IBAction func back(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }

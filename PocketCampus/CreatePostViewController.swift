@@ -83,6 +83,11 @@ class CreatePostViewController: UIViewController {
         
     }
     
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.postTitleTextField.resignFirstResponder()
+        self.postContentTextView.resignFirstResponder()
+    }
+    
     @IBAction func back(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }

@@ -35,15 +35,6 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AII-fB-R9b">
-                                                    <rect key="frame" x="70" y="19" width="120" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="120" id="xr9-u0-HU4"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swz-AH-Ljy">
                                                     <rect key="frame" x="297" y="14" width="60" height="30"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -53,14 +44,15 @@
                                                     <state key="normal" title="注销">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="logout:" destination="dmz-vT-ukY" eventType="touchUpInside" id="C06-Qz-6ZX"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="swz-AH-Ljy" secondAttribute="trailing" constant="10" id="IUT-y7-Cr3"/>
                                                 <constraint firstItem="6qH-UB-ZFx" firstAttribute="centerY" secondItem="CRJ-4G-g80" secondAttribute="centerY" id="MZj-TO-o6P"/>
-                                                <constraint firstItem="AII-fB-R9b" firstAttribute="centerY" secondItem="CRJ-4G-g80" secondAttribute="centerY" id="UQC-pZ-o3k"/>
                                                 <constraint firstItem="swz-AH-Ljy" firstAttribute="centerY" secondItem="CRJ-4G-g80" secondAttribute="centerY" id="X9e-n2-7hz"/>
-                                                <constraint firstItem="AII-fB-R9b" firstAttribute="leading" secondItem="6qH-UB-ZFx" secondAttribute="trailing" constant="10" id="ZDH-eA-tv7"/>
                                                 <constraint firstItem="6qH-UB-ZFx" firstAttribute="leading" secondItem="CRJ-4G-g80" secondAttribute="leading" constant="20" id="neq-lS-oAQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -812,7 +804,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="张" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wt-q2-Uhe">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wt-q2-Uhe">
                                                     <rect key="frame" x="295" y="10" width="60" height="60"/>
                                                     <color key="backgroundColor" red="0.0" green="0.69019607839999997" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>

@@ -86,6 +86,16 @@ class CreateLostAndFoundViewController: UIViewController {
         }
     }
     
+    
+    /**
+     点击屏幕键盘消失
+     */
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.titleTextField.resignFirstResponder()
+        self.contactTextField.resignFirstResponder()
+        self.contentTextView.resignFirstResponder()
+    }
+    
     @IBAction func back(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }

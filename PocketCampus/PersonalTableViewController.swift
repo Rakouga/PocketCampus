@@ -20,4 +20,10 @@ class PersonalTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func logout(sender: AnyObject) {
+        BmobUser.logout()
+        self.view.makeToast("注销成功", duration: 2, position: CSToastPositionCenter)
+        let loginView = sb.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
+        self.presentViewController(loginView, animated: true, completion: nil)
+    }
 }

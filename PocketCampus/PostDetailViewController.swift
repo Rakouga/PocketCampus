@@ -42,6 +42,9 @@ class PostDetailViewController: UIViewController ,UITableViewDataSource,UITableV
         //键盘事件
         NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(PostDetailViewController.keyBoardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(PostDetailViewController.keyBoardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil)
+        
+        //接收通知,刷新帖子列表
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "getRepliesList", name: "getRepliesListNotification", object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -124,6 +127,13 @@ class PostDetailViewController: UIViewController ,UITableViewDataSource,UITableV
     }
     
     /**
+     点击屏幕其他位置时候键盘消失
+     */
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.replyTextView.resignFirstResponder()
+    }
+    
+    /**
      键盘出现时触发该方法
      */
     func keyBoardWillShow(note:NSNotification)
@@ -156,7 +166,6 @@ class PostDetailViewController: UIViewController ,UITableViewDataSource,UITableV
     
     /**
      键盘消失时触发该方法
-     
      */
     func keyBoardWillHide(note:NSNotification)
     {
@@ -186,6 +195,8 @@ class PostDetailViewController: UIViewController ,UITableViewDataSource,UITableV
      点击发帖
      */
     @IBAction func reply(sender: AnyObject) {
+        self.replyTextView.resignFirstResponder()
+        
         if self.replyTextView.text != nil && self.replyTextView.text != "" {
             
             let user = BmobUser.getCurrentUser()
@@ -203,10 +214,8 @@ class PostDetailViewController: UIViewController ,UITableViewDataSource,UITableV
                     if isSuccessful {
                         self.view.makeToast("发帖成功", duration: 2, position: CSToastPositionCenter)
                         //发送通知,刷新帖子列表
-                        NSNotificationCenter.defaultCenter().postNotificationName("getPostListNotification", object: nil)
-                        delay(2, task: { () -> () in
-                            self.dismissViewControllerAnimated(true, completion: nil)
-                        })
+                        NSNotificationCenter.defaultCenter().postNotificationName("getRepliesListNotification", object: nil)
+                        self.replyTextView.text = ""
                     }else if (error != nil){
                         self.view.makeToast("回复失败", duration: 2, position: CSToastPositionCenter)
                         print("\(error)")
@@ -219,6 +228,8 @@ class PostDetailViewController: UIViewController ,UITableViewDataSource,UITableV
                 self.view.makeToast("请先登录")
             }
             
+        }else{
+            self.view.makeToast("内容不能为空", duration: 2, position: CSToastPositionCenter)
         }
     }
     

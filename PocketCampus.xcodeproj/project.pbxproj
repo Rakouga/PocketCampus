@@ -71,6 +71,10 @@
 		EEB37D7D1D0415DA00C7618B /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB37D7C1D0415DA00C7618B /* WeatherViewController.swift */; };
 		EEB37D7F1D04242900C7618B /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB37D7E1D04242900C7618B /* FeedbackViewController.swift */; };
 		EEB37D811D04286000C7618B /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB37D801D04286000C7618B /* AboutUsViewController.swift */; };
+		EEB37D841D05550000C7618B /* EverythingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB37D831D05550000C7618B /* EverythingViewController.swift */; };
+		EEB37D871D0555E800C7618B /* EverythingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB37D861D0555E800C7618B /* EverythingTableViewCell.swift */; };
+		EEB37D891D055BF800C7618B /* EverythingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB37D881D055BF800C7618B /* EverythingDetailViewController.swift */; };
+		EEB37D8B1D0571DE00C7618B /* CreateEverythingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB37D8A1D0571DE00C7618B /* CreateEverythingViewController.swift */; };
 		EECAA7091CE74D1F00D6C2C8 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECAA7081CE74D1F00D6C2C8 /* PostDetailViewController.swift */; };
 		EECAA70E1CE7528800D6C2C8 /* ReplyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECAA70D1CE7528800D6C2C8 /* ReplyTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -171,6 +175,10 @@
 		EEB37D7C1D0415DA00C7618B /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		EEB37D7E1D04242900C7618B /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		EEB37D801D04286000C7618B /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
+		EEB37D831D05550000C7618B /* EverythingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EverythingViewController.swift; sourceTree = "<group>"; };
+		EEB37D861D0555E800C7618B /* EverythingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EverythingTableViewCell.swift; sourceTree = "<group>"; };
+		EEB37D881D055BF800C7618B /* EverythingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EverythingDetailViewController.swift; sourceTree = "<group>"; };
+		EEB37D8A1D0571DE00C7618B /* CreateEverythingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEverythingViewController.swift; sourceTree = "<group>"; };
 		EECAA7081CE74D1F00D6C2C8 /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		EECAA70D1CE7528800D6C2C8 /* ReplyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -213,6 +221,7 @@
 		2C1989C81CC0D9A10086DF98 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				EEB37D821D0554E000C7618B /* Everything */,
 				EEAE79DE1CC35DA0000ECFB0 /* Playground */,
 				EEB37D601D007CD700C7618B /* Announcement */,
 				EEB37D6A1D03DF0400C7618B /* Personal */,
@@ -430,6 +439,25 @@
 			name = cell;
 			sourceTree = "<group>";
 		};
+		EEB37D821D0554E000C7618B /* Everything */ = {
+			isa = PBXGroup;
+			children = (
+				EEB37D851D0555CD00C7618B /* cell */,
+				EEB37D831D05550000C7618B /* EverythingViewController.swift */,
+				EEB37D881D055BF800C7618B /* EverythingDetailViewController.swift */,
+				EEB37D8A1D0571DE00C7618B /* CreateEverythingViewController.swift */,
+			);
+			name = Everything;
+			sourceTree = "<group>";
+		};
+		EEB37D851D0555CD00C7618B /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				EEB37D861D0555E800C7618B /* EverythingTableViewCell.swift */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
 		EECAA70A1CE7524E00D6C2C8 /* cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -629,6 +657,7 @@
 				EE014D421CC2258D009C9056 /* DatePickerUIView.swift in Sources */,
 				EEB37D7D1D0415DA00C7618B /* WeatherViewController.swift in Sources */,
 				EECAA7091CE74D1F00D6C2C8 /* PostDetailViewController.swift in Sources */,
+				EEB37D841D05550000C7618B /* EverythingViewController.swift in Sources */,
 				EEAE79E01CC35DD5000ECFB0 /* CreatePostViewController.swift in Sources */,
 				2C1989CD1CC0DAE10086DF98 /* LoginViewController.swift in Sources */,
 				2C53FE6D1CBB388300033505 /* AppDelegate.swift in Sources */,
@@ -640,6 +669,7 @@
 				EE014D311CC2258D009C9056 /* Download.swift in Sources */,
 				2C53FEA51CBB41BC00033505 /* Constant.swift in Sources */,
 				EEB37D7F1D04242900C7618B /* FeedbackViewController.swift in Sources */,
+				EEB37D8B1D0571DE00C7618B /* CreateEverythingViewController.swift in Sources */,
 				EE014D321CC2258D009C9056 /* Error.swift in Sources */,
 				EE014D471CC2258D009C9056 /* SCCamera.swift in Sources */,
 				EEB37D7B1D040C6A00C7618B /* CreateLostAndFoundViewController.swift in Sources */,
@@ -647,7 +677,9 @@
 				EEB37D691D027A8A00C7618B /* AnnouncementDetailViewController.swift in Sources */,
 				EEB37D761D0400BE00C7618B /* LostAndFoundViewController.swift in Sources */,
 				EE014D3B1CC2258D009C9056 /* ServerTrustPolicy.swift in Sources */,
+				EEB37D871D0555E800C7618B /* EverythingTableViewCell.swift in Sources */,
 				EEAE79E21CC36BCD000ECFB0 /* PlaygroundViewController.swift in Sources */,
+				EEB37D891D055BF800C7618B /* EverythingDetailViewController.swift in Sources */,
 				EE014D441CC2258D009C9056 /* OnewaySlider.swift in Sources */,
 				EEB37D671D008D0900C7618B /* CreateAnnouncementViewController.swift in Sources */,
 				EE014D2D1CC2258D009C9056 /* ASValueTrackingSlider.m in Sources */,

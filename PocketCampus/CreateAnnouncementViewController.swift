@@ -34,6 +34,11 @@ class CreateAnnouncementViewController: UIViewController ,CZPickerViewDelegate,C
         //给单位label设置点击事件,但点击时,显示pickerView选择单位
         self.departmentLabel.userInteractionEnabled = true
         self.departmentLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(CreateAnnouncementViewController.selectDepartment(_:))))
+        
+        self.contentTextView.layer.cornerRadius = 3
+        self.contentTextView.layer.masksToBounds = true
+        self.contentTextView.layer.borderWidth = 1
+        self.contentTextView.layer.borderColor = UIColor(hexString: "BABABA").CGColor
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,7 +91,6 @@ class CreateAnnouncementViewController: UIViewController ,CZPickerViewDelegate,C
     func checkFormatIsLegal()->Bool{
         
         self.announcementTitle = self.titleLabel.text
-        
         self.typeNumber = self.typeSegment.selectedSegmentIndex
         switch self.typeNumber {
         case 0:
@@ -148,6 +152,11 @@ class CreateAnnouncementViewController: UIViewController ,CZPickerViewDelegate,C
                 }
             })
         }
+    }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.titleLabel.resignFirstResponder()
+        self.contentTextView.resignFirstResponder()
     }
     
     @IBAction func back(sender: AnyObject) {

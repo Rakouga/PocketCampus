@@ -70,6 +70,13 @@ class ChangeViewController: UIViewController {
         
     }
     
+    /**
+     点击屏幕键盘消失
+     */
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.changeText.resignFirstResponder()
+    }
+    
     @IBAction func back(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
     }
