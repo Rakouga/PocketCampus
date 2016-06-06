@@ -21,7 +21,7 @@ class PostDetailViewController: UIViewController ,UITableViewDataSource,UITableV
     
     @IBOutlet weak var replyView: UIView!
     @IBOutlet weak var replyTextView: UITextView!
-    var postID:String?
+    var postID:String!
     var repliesList = [Dictionary<String,String>]()//保存回帖列表
     
     

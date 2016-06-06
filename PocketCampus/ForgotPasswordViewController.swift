@@ -22,24 +22,30 @@ class ForgotPasswordViewController: UIViewController {
 
     @IBAction func confirm(sender: AnyObject) {
         var emailVerified = false
-        let email = self.emailTextfield.text
+        if self.emailTextfield.text == "" || self.emailTextfield.text == nil{
+            self.view.makeToast("不能为空", duration: 2.0, position: CSToastPositionCenter)
+            return
+        }
+        let email:String! = self.emailTextfield.text
+        print("email:\(email)")
         //设置查询条件
         let queryArray = [["email":"\(email)"],["emailVerified":true]]
         self.query?.addTheConstraintByAndOperationWithArray(queryArray)
         
         self.query?.findObjectsInBackgroundWithBlock({ (array, error) in
-            print("array:\(array);error:\(error)")
-            for data in array{
-                emailVerified = true
-                print("邮箱地址是:\((data as! BmobObject).objectForKey("email"))")
-                BmobUser.requestPasswordResetInBackgroundWithEmail(email)
-                self.view.makeToast("已向该邮箱发送密码重置邮件,请查收", duration: 3.0, position: CSToastPositionCenter)
+            if error == nil{
+                print("array:\(array);error:\(error)")
+                for data in array{
+                    emailVerified = true
+                    print("邮箱地址是:\((data as! BmobObject).objectForKey("email"))")
+                    BmobUser.requestPasswordResetInBackgroundWithEmail(email)
+                    self.view.makeToast("已向该邮箱发送密码重置邮件,请查收", duration: 3.0, position: CSToastPositionCenter)
+                }
+            }else{
+                self.view.makeToast("请求失败", duration: 3.0, position: CSToastPositionCenter)
             }
         })
         
-        if emailVerified == false{
-            self.view.makeToast("该邮箱尚未注册或未验证", duration: 3.0, position: CSToastPositionCenter)
-        }
     }
     
     //点击屏幕后键盘消失
